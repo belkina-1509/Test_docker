@@ -1,13 +1,24 @@
-# Используем официальный nginx образ
-FROM nginx:alpine
+# Используем официальный Python образ
+FROM python:3.11-slim
 
-# Копируем статические файлы
-COPY . /usr/share/nginx/html
+# Устанавливаем рабочую директорию
+WORKDIR /app
 
-# Копируем конфигурацию nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Копируем файл зависимостей
+COPY requirements.txt .
+
+# Устанавливаем зависимости
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Копируем код приложения
+COPY app.py .
 
 # Открываем порт
-EXPOSE 80
+EXPOSE 5000
 
-# nginx запускается автоматически
+# Устанавливаем переменную окружения
+ENV PORT=5000
+ENV ENV=production
+
+# Запускаем приложение
+CMD ["python", "app.py"]
