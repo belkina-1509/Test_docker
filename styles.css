@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #667eea;
+    font-size: 1.5em;
+}
+
+.btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.calc-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.calc-form input {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.calc-form input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.info-box {
+    background: #f8f9fa;
+    border-radius: 5px;
+    padding: 15px;
+    min-height: 100px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border-left: 4px solid #667eea;
+}
+
+.info-box.loading {
+    color: #667eea;
+    font-style: italic;
+}
+
+.info-box.error {
+    border-left-color: #e74c3c;
+    background: #fee;
+    color: #c0392b;
+}
+
+.info-box.success {
+    border-left-color: #27ae60;
+    background: #efe;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+footer p {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .calc-form {
+        flex-direction: column;
+    }
+    
+    .calc-form input {
+        width: 100%;
+    }
+}

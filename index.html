@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Test App - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐳 Docker Test Application</h1>
+            <p>Веб-интерфейс для мониторинга Flask API</p>
+        </header>
+
+        <div class="dashboard">
+            <!-- Главная информация -->
+            <section class="card">
+                <h2>📊 Главная информация</h2>
+                <button onclick="loadMainInfo()" class="btn">Обновить</button>
+                <div id="main-info" class="info-box">
+                    <p>Нажмите "Обновить" для загрузки данных</p>
+                </div>
+            </section>
+
+            <!-- Health Check -->
+            <section class="card">
+                <h2>💚 Health Check</h2>
+                <button onclick="checkHealth()" class="btn">Проверить</button>
+                <div id="health-info" class="info-box">
+                    <p>Нажмите "Проверить" для проверки здоровья</p>
+                </div>
+            </section>
+
+            <!-- Системная информация -->
+            <section class="card">
+                <h2>ℹ️ Системная информация</h2>
+                <button onclick="loadSystemInfo()" class="btn">Загрузить</button>
+                <div id="system-info" class="info-box">
+                    <p>Нажмите "Загрузить" для получения информации</p>
+                </div>
+            </section>
+
+            <!-- Калькулятор -->
+            <section class="card">
+                <h2>🔢 Калькулятор</h2>
+                <div class="calc-form">
+                    <input type="number" id="num-a" placeholder="Число A" step="any">
+                    <input type="number" id="num-b" placeholder="Число B" step="any">
+                    <button onclick="calculate()" class="btn">Вычислить</button>
+                </div>
+                <div id="calc-result" class="info-box">
+                    <p>Введите два числа и нажмите "Вычислить"</p>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Автоматическое обновление каждые 30 секунд</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
